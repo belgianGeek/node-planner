@@ -57,7 +57,7 @@ body {
   }
 
   .backgroundColor {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: $translucent-black;
     z-index: -1;
     position: fixed;
     top: 0;

@@ -140,10 +140,11 @@
     align-items: center;
     position: fixed;
     top: 0.55rem;
-    left: 2%;
+    left: 7em;
+    font-size: 1.1em;
 
     &__icon {
-      margin: 0 1.5em 0 3em;
+      margin-right: 1.5em;
       cursor: pointer;
     }
   }
