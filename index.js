@@ -37,6 +37,15 @@ const exportDB = require('./modules/exportDB');
 const getUsers = require('./modules/getUsers');
 const existPath = require('./modules/existPath');
 
+const i18n = require('i18n');
+i18n.configure({
+  autoReload: true,
+  locales: ['en', 'fr'],
+  directory: path.join(__dirname, '/locales'),
+  defaultLocale: 'fr',
+  queryParameter: 'lang'
+});
+
 const createLocationsTable = require('./modules/createLocationsTable');
 const createSessionTable = require('./modules/createSessionTable');
 const createTasksTable = require('./modules/createTasksTable');
@@ -154,6 +163,8 @@ app.use(session({
     maxAge: 1000 * 30 * 30 // Set the session lifetime to thirty minutes
   }
 }));
+
+app.use(i18n.init);
 
 app.use(passport.initialize());
 app.use(passport.session());

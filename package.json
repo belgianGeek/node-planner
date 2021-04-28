@@ -24,6 +24,7 @@
     "express-session": "^1.17.1",
     "fs-extra": "^9.0.1",
     "http": "^0.0.1-security",
+    "i18n": "^0.13.2",
     "ip": "^1.1.5",
     "jsbarcode": "^3.11.0",
     "lodash": "^4.17.19",
