@@ -1,42 +1,42 @@
 <section class="dbConfig flex">
   <form class="dbConfig__form flex" action="/createdb" method="post">
-    <h2 class="dbConfig__title title">Personnalisation</h2>
+    <h2 class="dbConfig__title title"><%= __('config-title')%></h2>
     <label class="dbConfig__form__name flex">
-      Nom de l'instance Open Planner
-      <input class="input" type="text" name="instance" placeholder="Nom de l'instance..." required>
+      <%= __('config-instance-name') %>
+      <input class="input" type="text" name="instance" placeholder="<%= __('config-instance-name-placeholder') %>" required>
     </label>
     <label class="dbConfig__form__description flex">
-      Décrivez ici l'utilité d'Open Planner
-      <textarea class="dbConfig__form__description__textarea" rows="8" cols="80" placeholder="Indiquez ici l'utilité du logiciel, son public cible..."></textarea>
+      <%= __('config-instance-purpose') %>
+      <textarea class="dbConfig__form__description__textarea" rows="8" cols="80" placeholder="<%= __('config-instance-purpose-placeholder') %>"></textarea>
     </label>
     <label class="dbConfig__form__locationName flex">
-      Ajout d'une première implantation
-      <input class="input" type="text" name="location_name" placeholder="Nom de l'implantation..." required>
+      <%= __('config-first-location-name') %>
+      <input class="input" type="text" name="location_name" placeholder="<%= __('config-first-location-name-placeholder') %>" required>
     </label>
     <label class="dbConfig__form__locationMail flex">
-      Adresse mail liée à la première implantation
-      <input class="input" type="email" name="location_mail" placeholder="Adresse mail liée à l'implantation..." required>
+      <%= __('config-first-location-mail') %>
+      <input class="input" type="email" name="location_mail" placeholder="<%= __('config-first-location-mail-placeholder') %>" required>
     </label>
-    <h2 class="dbConfig__title title">Paramètres d'emailing</h2>
+    <h2 class="dbConfig__title title"><%= __('settings-emailing-title') %></h2>
     <label class="dbConfig__form__senderLabel flex">
-      Nom de l'expéditeur
-      <input class="input" type="text" name="sender_name" placeholder="Nom de l'expéditeur" required>
+      <%= __('settings-sender-name') %>
+      <input class="input" type="text" name="sender_name" placeholder="<%= __('settings-sender-name') %>" required>
     </label>
     <label class="dbConfig__form__smtpUserLabel flex">
-      Adresse de l'expéditeur
-      <input class="input" type="email" name="smtp_user" placeholder="Adresse mail" required>
+      <%= __('settings-sender-mail-address') %>
+      <input class="input" type="email" name="smtp_user" placeholder="<%= __('settings-sender-mail-address') %>" required>
     </label>
     <label class="dbConfig__form__smtpHostLabel flex">
-      Serveur SMTP
-      <input class="input" type="text" name="smtp_host" placeholder="Adresse du serveur SMTP" required>
+      <%= __('settings-smtp-address') %>
+      <input class="input" type="text" name="smtp_host" placeholder="<%= __('settings-smtp-address-placeholder') %>" required>
     </label>
     <label class="dbConfig__form__smtpPasswdLabel flex">
-      Mot de passe de l'adresse email
-      <input class="input" type="password" name="smtp_passwd" placeholder="Insérez le mot magique" required>
+      <%= __('settings-mail-address-passwd') %>
+      <input class="input" type="password" name="smtp_passwd" placeholder="<%= __('form-passwd-generic') %>" required>
     </label>
     <span class="dbConfig__form__btnContainer flex">
-      <button class="dbConfig__form__btnContainer__reset btn btn--reset" type="reset">Effacer les champs</button>
-      <button class="dbConfig__form__btnContainer__submit btn btn--submit" type="submit">Valider</button>
+      <button class="dbConfig__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
+      <button class="dbConfig__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
     </span>
   </form>
 </section>
