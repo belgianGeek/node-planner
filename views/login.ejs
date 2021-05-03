@@ -8,14 +8,14 @@
     <% if (isFirstUserConfigured && isDbConfigured) { %>
       <h1 class="title home__mainTitle"><%= instanceName %></h1>
       <form class="login flex" action="/login" method="post">
-        <h1 class="title home__mainTitle">S'identifier</h1>
+        <h1 class="title home__mainTitle"><%= __('login-title') %></h1>
         <label  class="flex">
           Adresse email
           <input class="input" type="email" name="email" placeholder="Adresse email" required>
         </label>
         <label  class="flex">
           Mot de passe
-          <input class="input" type="password" name="password" placeholder="Insérez le mot magique" required>
+          <input class="input" type="password" name="password" placeholder="<%= __('form-passwd-generic') %>" required>
         </label>
         <button class="btn home-btn" type="submit">Se connecter</button>
         <% if (typeof messages != 'undefined' && messages.error) { %>

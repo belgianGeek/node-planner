@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-BE" dir="ltr">
+<html lang="<%= __('lang') %>" dir="ltr">
 
 <%- include('head'); %>
 
@@ -16,12 +16,12 @@
   <main class="wrapper flex">
     <section class="home flex">
       <h1 class="home__mainTitle"><%= instanceName %></h1>
-      <p class="greetings">Bonjour <%= user.firstname %> <%= user.name %> !</p>
-      <h2 class="home__title title">Que veux-tu faire ?</h2>
+      <p class="greetings"><%= __('greetings') %> <%= user.firstname %> <%= user.name %> !</p>
+      <h2 class="home__title title"><%= __('home-call-to-action') %></h2>
       <span class="home__btnContainer flex">
-        <button class="home__btnContainer__newRequest btn home-btn" type="button">Rentrer une nouvelle demande</button>
+        <button class="home__btnContainer__newRequest btn home-btn" type="button"><%= __('home-new-request') %></button>
         <button class="home__btnContainer__search btn home-btn" type="button" name="button">
-          <a href="/search">Afficher les demandes en cours</a>
+          <a href="/search"><%= __('home-show-requests') %></a>
         </button>
       </span>
     </section>
