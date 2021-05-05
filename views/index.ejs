@@ -21,7 +21,7 @@
       <span class="home__btnContainer flex">
         <button class="home__btnContainer__newRequest btn home-btn" type="button"><%= __('home-new-request') %></button>
         <button class="home__btnContainer__search btn home-btn" type="button" name="button">
-          <a href="/search"><%= __('home-show-requests') %></a>
+          <a href="/search?lang=<%= __('lang') %>"><%= __('home-show-requests') %></a>
         </button>
       </span>
     </section>
@@ -29,13 +29,13 @@
     <% if (user.type === 'admin') { %>
       <%- include('users', {
         classname: 'users',
-        subject: 'Utilisateurs',
-        title: 'Ajouter un utilisateur'
+        subject: __('users-subject'),
+        title: __('users-add-title')
       }); %>
       <%- include('users', {
         classname: 'locations',
-        subject: 'Implantations',
-        title: 'Ajouter une implantation'
+        subject: __('locations-subject'),
+        title: __('locations-add-title')
       }); %>
       <%- include('register', {
         registerClass: 'hidden',
@@ -48,22 +48,22 @@
   <% if (user.type !== 'guest') { %>
   <span class="export hidden">
     <span class="export__child flex">
-      <h2 class="export__child__title title">Exporter la base de données</h2>
+      <h2 class="export__child__title title"><%= __('export-title') %></h2>
       <section class="export__child__container flex">
         <form class="export__child__container__format flex">
           <h3 class="title">Format</h3>
           <label class="export__child__container__format__csv">
             <input class="export__child__container__format__csv__input input radio" name="DBformat" type="radio" value="csv">
-            CSV (compatible Excel)
+            <%= __('export-csv') %>
           </label>
           <label class="export__child__container__format__pgsql">
             <input class="export__child__container__format__pgsql__input input radio" name="DBformat" type="radio" value="pgsql">
-            PostgreSQL (format base de données)
+            <%= __('export-postgres') %>
           </label>
         </form>
         <span class="export__child__container__btnContainer flex">
-          <button class="export__child__container__btnContainer__btn btn btn--submit" type="button">Exporter</button>
-          <button class="export__child__container__btnContainer__btn btn btn--reset" type="button">Annuler</button>
+          <button class="export__child__container__btnContainer__btn btn btn--submit" type="button"><%= __('export-btn') %></button>
+          <button class="export__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form-cancel-generic') %></button>
         </span>
       </section>
     </span>
@@ -71,18 +71,18 @@
   <% if (user.type === 'admin') { %>
     <span class="import hidden">
       <span class="import__child flex">
-        <h2 class="import__child__title title">Importer des utilisateurs</h2>
+        <h2 class="import__child__title title"><%= __('import-title') %></h2>
         <section class="import__child__container flex">
           <form action="/upload" method="post" class="import__child__container__file flex" enctype="multipart/form-data">
             <label class="import__child__container__file__upload">
-              Sélectionner le fichier à importer :
+              <%= __('import-select-file') %> :
               <input class="import__child__container__file__upload__input input" name="dataUpload" type="file">
-              ou téléchargez le <a href="/template">modèle</a>
+              <%= __('import-template-01') %> <a href="/template"><%= __('import-template-02') %></a>
             </label>
             <span class="import__child__container__notification flex"></span>
             <span class="import__child__container__btnContainer flex">
-              <button class="import__child__container__btnContainer__btn btn btn--submit" type="submit">Importer</button>
-              <button class="import__child__container__btnContainer__btn btn btn--reset" type="button">Annuler</button>
+              <button class="import__child__container__btnContainer__btn btn btn--submit" type="submit"><%= __('import-btn') %></button>
+              <button class="import__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form-cancel-generic') %></button>
             </span>
           </form>
         </section>

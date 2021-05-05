@@ -10,27 +10,27 @@
       <form class="login flex" action="/login" method="post">
         <h1 class="title home__mainTitle"><%= __('login-title') %></h1>
         <label  class="flex">
-          Adresse email
-          <input class="input" type="email" name="email" placeholder="Adresse email" required>
+          <%= __('login-mail') %>
+          <input class="input" type="email" name="email" placeholder="<%= __('login-mail') %>" required>
         </label>
         <label  class="flex">
-          Mot de passe
+          <%= __('login-passwd') %>
           <input class="input" type="password" name="password" placeholder="<%= __('form-passwd-generic') %>" required>
         </label>
-        <button class="btn home-btn" type="submit">Se connecter</button>
+        <button class="btn home-btn" type="submit"><%= __('login-btn') %></button>
         <% if (typeof messages != 'undefined' && messages.error) { %>
           <p class="warning"><%= messages.error %></p>
         <% } %>
       </form>
     <% } else if (!isDbConfigured && !isFirstUserConfigured) { %>
-      <h1 class="title home__mainTitle"><%= instanceName %> - Configuration initiale de la base de données</h1>
+      <h1 class="title home__mainTitle"><%= instanceName %> - <%= __('config-db') %></h1>
       <%- include('dbConfig'); %>
       <%- include('register',  {registerClass: 'hidden', locations: locations}); %>
     <% } else if (!isDbConfigured && isFirstUserConfigured) { %>
-      <h1 class="title home__mainTitle"><%= instanceName %> - Configuration initiale de la base de données</h1>
+      <h1 class="title home__mainTitle"><%= instanceName %> - <%= __('config-db') %></h1>
       <%- include('dbConfig'); %>
     <% } else { %>
-      <h1 class="title home__mainTitle"><%= instanceName %> - Création du premier compte administrateur</h1>
+      <h1 class="title home__mainTitle"><%= instanceName %> - <%= __('config-first-admin') %></h1>
       <%- include('register',  {registerClass: 'flex', locations: locations}); %>
     <% } %>
   </main>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-BE" dir="ltr">
+<html lang="<%= __('lang') %>" dir="ltr">
 
 <%- include('head'); %>
 
@@ -10,18 +10,18 @@
   </header>
   <main class="wrapper flex">
     <section class="search">
-      <h1 class="search__title title">Module de recherche</h1>
+      <h1 class="search__title title"><%= __('search-title') %></h1>
       <form class="search__container flex" method="GET" action="/">
-        <label for="search__container__select">Effectuer une recherche</label>
+        <label for="search__container__select"><%= __('search-container-label') %></label>
         <select class="search__container__select input" name="search__select">
-          <option value="default">Choisissez un site</option>
-          <% for(const [i, location] of locations.entries()) { %>
+          <option value="default"><%= __('search-default') %></option>
+          <% for (const [i, location] of locations.entries()) { %>
           <option value="<%= location.location_id %>"><%= location.location_name %></option>
           <% } %>
         </select>
-        <input class="search__container__readerInput input" type="search" placeholder="Nom de famille du demandeur">
+        <input class="search__container__readerInput input" type="search" placeholder="<%= __('request-applicant-name') %>">
         <svg class="search__container__help" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <title>Vous pouvez remplir le champ pour filtrer votre recherche avec le nom de famille d'un demandeur</title>
+          <title><%= __('help-applicant-name') %></title>
           <circle cx="12" cy="12" r="10"></circle>
           <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
           <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -40,10 +40,10 @@
         </button>
       </form>
       <h2 class="search__title search__title__h2 title">
-        Résultats de recherche
+        <%= __('search-results-title') %>
         <% if (user.type !== 'guest') { %>
           <svg class="search__title__h2__help" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <title>Vous pouvez agir sur les demandes en effectuant un clic-droit sur chacune d'elles</title>
+            <title><%= __('help-search-results') %></title>
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
             <line x1="12" y1="17" x2="12.01" y2="17"></line>

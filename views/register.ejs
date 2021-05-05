@@ -3,26 +3,26 @@
   <% let postURL = ''; %>
 
   <% if (!isFirstUserConfigured) { %>
-    <% postURL = '/login'; %>
+    <% postURL = '/login?lang=' + __('lang'); %>
   <% } else { %>
-    <% postURL = '/'; %>
-    <% title = 'Ajouter un utilisateur'; %>
+    <% postURL = '/?lang=' + __('lang'); %>
+    <% title = __('users-add-title'); %>
   <% } %>
   <% if (title !== '') { %><h2 class="register__title title"><%= title %></h2> <% } %>
   <form class="register__form flex" action="<%= postURL %>" method="post">
     <input class="hidden register__form__userID" type="text" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.user_id %>" <% } %>>
     <label class="register__form__name flex">
-      Nom
-      <input class="input" type="text" placeholder="Nom" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.name %>"<% } %> required>
+      <%= __('form-name-generic') %>
+      <input class="input" type="text" placeholder="<%= __('form-name-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.name %>"<% } %> required>
     </label>
     <label class="register__form__userFirstName flex">
-      Prénom
-      <input class="input" type="text" placeholder="Prénom" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.firstname %>"<% } %> required>
+      <%= __('form-firstname-generic') %>
+      <input class="input" type="text" placeholder="<%= __('form-firstname-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.firstname %>"<% } %> required>
     </label>
     <label class="register__form__location flex">
-      Implantation
+      <%= __('form-location-generic') %>
       <select class="input">
-        <option value="default">Choisissez une implantation...</option>
+        <option value="default"><%= __('register-location-default') %>...</option>
         <% for(const [i, location] of locations.entries()) { %>
           <option
             value="<%= location.location_id %>"
@@ -32,42 +32,42 @@
       </select>
     </label>
     <label class="register__form__password flex">
-      Mot de passe
-      <input class="input" type="password" placeholder="Insérez le mot magique" required>
+      <%= __('login-passwd') %>
+      <input class="input" type="password" placeholder="<%= __('form-passwd-generic') %>" required>
     </label>
     <label class="register__form__email flex">
-      Adresse email
-      <input class="input" type="email" placeholder="Adresse email" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.email %>"<% } %> required>
+      <%= __('form-mail-generic') %>
+      <input class="input" type="email" placeholder="<%= __('form-mail-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.email %>"<% } %> required>
     </label>
     <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === 'admin')) { %>
       <label class="register__form__type flex">
-        Type de compte
+        <%= __('register-account-type') %>
         <select class="input">
-          <option value="default">Choisissez un type de compte...</option>
-          <option value="admin" <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === "admin")) { %> selected <% } %>>Administrateur</option>
+          <option value="default"><%= __('register-account-type-default') %>...</option>
+          <option value="admin" <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === "admin")) { %> selected <% } %>><%= __('account-type-admin') %></option>
           <% if (isFirstUserConfigured) { %>
-            <option value="user" <% if (allowPasswordUpdate && user.type === "user") { %> selected <% } %>>Utilisateur</option>
-            <option value="guest" <% if (allowPasswordUpdate && user.type === "guest") { %> selected <% } %>>Visiteur</option>
+            <option value="user" <% if (allowPasswordUpdate && user.type === "user") { %> selected <% } %>><%= __('account-type-user') %></option>
+            <option value="guest" <% if (allowPasswordUpdate && user.type === "guest") { %> selected <% } %>><%= __('account-type-guest') %></option>
           <% } %>
         </select>
       </label>
     <% } %>
-    <h3 class="register__form__title title">Sexe</h3>
+    <h3 class="register__form__title title"><%= __('gender-title') %></h3>
     <span class="register__form__gender flex">
       <label class="register__form__male">
         <input class="input radio" name="gender" type="radio" value="m" <% if (allowPasswordUpdate && typeof user !== 'undefined' && user.gender === "m") { %> checked <% } %>>
-        Masculin
+        <%= __('gender-male') %>
       </label>
       <label class="register__form__female">
         <input class="input radio" name="gender" type="radio" value="f" <% if (allowPasswordUpdate && typeof user !== 'undefined' && user.gender === "f") { %> checked <% } %>>
-        Féminin
+        <%= __('gender-female') %>
       </label>
     </span>
     <span class="register__form__btnContainer flex">
-      <button class="register__form__btnContainer__reset btn btn--reset" type="reset">Effacer les champs</button>
-      <button class="register__form__btnContainer__submit btn btn--submit" type="submit">Valider</button>
+      <button class="register__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
+      <button class="register__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
       <% if (isFirstUserConfigured) { %>
-        <button class="register__form__btnContainer__hide btn home-btn" type="button">Annuler</button>
+        <button class="register__form__btnContainer__hide btn home-btn" type="button"><%= __('form-cancel-generic') %></button>
       <% } %>
     </span>
   </form>
