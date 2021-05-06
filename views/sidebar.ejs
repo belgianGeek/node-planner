@@ -13,7 +13,7 @@
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <p class="menu__item__legend hide">Recherche</p>
+        <p class="menu__item__legend hide"><%= __('sidebar.search') %></p>
       </a>
     </span>
     <% if (allowPasswordUpdate && user.type !== 'admin') { %>
@@ -26,7 +26,7 @@
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
         <circle cx="12" cy="7" r="4"></circle>
       </svg>
-      <p class="menu__item__legend hide">Mon compte</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.account') %></p>
     </span>
     <% } %>
     <% if (user.type !== 'guest') { %>
@@ -39,7 +39,7 @@
         <path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8m8.7-1.6V21" />
         <path d="M16 16l-4-4-4 4" />
       </svg>
-      <p class="menu__item__legend hide">Exporter des données</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.export') %></p>
     </span>
     <% } %>
     <% if (user.type === 'admin') { %>
@@ -50,7 +50,7 @@
       <svg class="menu__item__icon hide" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21.2 15c.7-1.2 1-2.5.7-3.9-.6-2-2.4-3.5-4.4-3.5h-1.2c-.7-3-3.2-5.2-6.2-5.6-3-.3-5.9 1.3-7.3 4-1.2 2.5-1 6.5.5 8.8M12 19.8V12M16 17l-4 4-4-4" />
       </svg>
-      <p class="menu__item__legend hide">Importer des utilisateurs</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.import_users') %></p>
     </span>
     <span class="menu__item usersLink flex">
       <svg class="menu__item__icon shown" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +65,7 @@
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
       </svg>
-      <p class="menu__item__legend hide">Gestion des utilisateurs</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.manage_users') %></p>
     </span>
     <span class="menu__item locationsLink flex">
       <svg class="menu__item__icon shown" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -76,7 +76,7 @@
         <circle cx="12" cy="10" r="3" />
         <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
       </svg>
-      <p class="menu__item__legend hide">Gestion des implantations</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.manage_locations') %></p>
     </span>
     <span class="menu__item settingsLink flex">
       <svg class="menu__item__icon shown" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f8f4f4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -91,12 +91,12 @@
           d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
         </path>
       </svg>
-      <p class="menu__item__legend hide">Paramètres</p>
+      <p class="menu__item__legend hide"><%= __('settings.title') %></p>
     </span>
     <% } %>
     <% } else { %>
     <span class="menu__item homeLink flex">
-      <a class="flex" href="/" rel="noreferrer">
+      <a class="flex" href="/?lang=<%= __('lang') %>" rel="noreferrer">
         <svg class="menu__item__icon shown" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
           <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
@@ -105,7 +105,7 @@
           <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
           <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
         </svg>
-        <p class="menu__item__legend hide">Accueil</p>
+        <p class="menu__item__legend hide"><%= __('sidebar.home') %></p>
       </a>
     </span>
     <% } %>
@@ -120,7 +120,7 @@
         <line x1="12" y1="16" x2="12" y2="12"></line>
         <line x1="12" y1="8" x2="12.01" y2="8"></line>
       </svg>
-      <p class="menu__item__legend hide">À propos</p>
+      <p class="menu__item__legend hide"><%= __('sidebar.about') %></p>
     </span>
     <span class="menu__item logoutLink flex">
       <form class="logoutLink__form flex" action="/logout?_method=DELETE" method="post">
@@ -130,7 +130,7 @@
         <svg class="menu__item__icon hide" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9" />
         </svg>
-        <button class="menu__item__legend btn hide" type="submit">Déconnexion</button>
+        <button class="menu__item__legend btn hide" type="submit"><%= __('sidebar.log_out') %></button>
       </form>
     </span>
   </nav>

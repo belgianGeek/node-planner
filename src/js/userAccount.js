@@ -1,6 +1,6 @@
 $('.accountLink').click(() => {
   $('.register__title')
-    .text('Mon compte')
+    .text(locales.sidebar.account)
     .addClass('myAccountTitle');
 
   $('.wrapper, .header').addClass('blur');

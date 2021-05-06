@@ -1,39 +1,39 @@
 <div class="settings__container hidden">
   <div class="settings__child flex">
     <span class="settings__child__header flex">
-      <h1>Paramètres</h1>
+      <h1><%= __('settings.title') %></h1>
     </span>
-    <h2 class="settings__child__heading2 settings__child__heading">Permissions et notifications</h2>
+    <h2 class="settings__child__heading2 settings__child__heading"><%= __('settings.permissions_title') %></h2>
     <span class="toggleMail flex">
-      <span class="toggleMail__Comment">Lors de l'introduction d'une demande, envoyer un mail à l'équipe chargée d'effectuer la tâche</span>
+      <span class="toggleMail__Comment"><%= __('settings.mail_comment') %></span>
       <label class="toggleMail__Switch">
         <input class="toggleMail__Input" type="checkbox" name="toggleMailInput" value="">
         <span class="toggleMail__Slider"></span>
       </label>
     </span>
     <span class="toggleMailCc flex">
-      <span class="toggleMailCc__Comment">Lors de l'introduction ou de la modification d'une demande, prévenir le demandeur par mail</span>
+      <span class="toggleMailCc__Comment"><%= __('settings.mailcc_comment') %></span>
       <label class="toggleMailCc__Switch">
         <input class="toggleMailCc__Input" type="checkbox" name="toggleMailCcInput" value="">
         <span class="toggleMailCc__Slider"></span>
       </label>
     </span>
     <span class="toggleAttachments flex">
-      <span class="toggleAttachments__Comment">Permettre au demandeur de joindre une image à sa demande</span>
+      <span class="toggleAttachments__Comment"><%= __('settings.attachment_comment') %></span>
       <label class="toggleAttachments__Switch">
         <input class="toggleAttachments__Input" type="checkbox" name="toggleAttachmentsInput" value="">
         <span class="toggleAttachments__Slider"></span>
       </label>
     </span>
     <span class="toggleUserPasswordUpdate flex">
-      <span class="toggleUserPasswordUpdate__Comment">Autoriser les utilisateurs à modifier leurs coordonnées et leur mot de passe</span>
+      <span class="toggleUserPasswordUpdate__Comment"><%= __('settings.allow_password_update') %></span>
       <label class="toggleUserPasswordUpdate__Switch">
         <input class="toggleUserPasswordUpdate__Input" type="checkbox" name="toggleUserPasswordUpdateInput" value="">
         <span class="toggleUserPasswordUpdate__Slider"></span>
       </label>
     </span>
-    <h2 class="settings__child__heading2 settings__child__heading">Personnalisation</h2>
-    <!-- <form class="backgroundImageUploadForm flex" action="/" enctype="multipart/form-data" method="post">
+    <h2 class="settings__child__heading2 settings__child__heading"><%= __('settings.customization_title') %></h2>
+    <!-- <form class="backgroundImageUploadForm flex" action="/" enctype="multipart/form.data" method="post">
       <label for="backgroundImageUploadForm__label">Cet arrière-plan est moche !</label>
       <button class="backgroundImageUploadForm__Btn btn" type="button" name="backgroundImageUploadBtn">Télécharger une image</button>
       <input class="backgroundImageUploadForm__InputFile hidden" type="file" name="backgroundImageUploadInput" accept="image/png, image/jpg">
@@ -41,38 +41,38 @@
     </form> -->
     <span class="settings__child__instanceNameContainer flex">
       <label class="settings__child__instanceNameContainer__label flex">
-        Nom de l'interface
-        <input class="settings__child__instanceNameContainer__label__input input" type="text" placeholder="Nom de l'interface">
+        <%= __('config.instance_name') %>
+        <input class="settings__child__instanceNameContainer__label__input input" type="text" placeholder="<%= __('config.instance_name_placeholder') %>">
       </label>
     </span>
-    <span class="protip protip--noMargin">Cette indication est utilisée dans les notifications envoyées par mail ainsi que dans les différents formulaires de l'interface</span>
+    <span class="protip protip--noMargin"><%= __('protip.instance_name') %></span>
     <span class="settings__child__descriptionContainer flex">
       <label class="settings__child__descriptionContainer__label flex">
-        Décrivez ici l'utilité d'Open Planner
-        <input class="settings__child__descriptionContainer__label__textarea input" placeholder="Indiquez ici l'utilité du logiciel, son public cible..." />
+        <%= __('config.instance_purpose') %>
+        <input class="settings__child__descriptionContainer__label__textarea input" placeholder="<%= __('config.instance_purpose_placeholder') %>" />
       </label>
     </span>
-    <span class="protip protip--noMargin">Cette indication est utilisée pour améliorer le SEO (optimisation pour les moteurs de recherche) et permettre de trouver plus facilement l'outil sur Internet</span>
+    <span class="protip protip--noMargin"><%= __('protip.description')%></span>
     <h2 class="settings__child__heading2 settings__child__heading">Emailing</h2>
     <span class="settings__child__senderContainer flex">
       <label class="settings__child__senderContainer__senderLabel flex">
-        Nom de l'expéditeur
-        <input class="settings__child__senderContainer__senderLabel__input input" type="text" placeholder="Nom de l'expéditeur">
+        <%= __('settings.sender_mail_address') %>
+        <input class="settings__child__senderContainer__senderLabel__input input" type="text" placeholder="<%= __('settings.sender_mail_address') %>">
       </label>
-      <span class="protip protip--noMargin">Cette indication est utilisée comme signature</span>
+      <span class="protip protip--noMargin"><%= __('protip.signature') %></span>
     </span>
     <span class="settings__child__mailContainer flex">
       <label class="settings__child__mailContainer__smtpUserLabel flex">
-        Adresse de l'expéditeur
-        <input class="settings__child__mailContainer__smtpUserLabel__input input" type="email" placeholder="Adresse mail">
+        <%= __('settings.sender_mail_address') %>
+        <input class="settings__child__mailContainer__smtpUserLabel__input input" type="email" placeholder="<%= __('form.mail_generic') %>">
       </label>
       <label class="settings__child__mailContainer__smtpHostLabel flex">
-        Serveur SMTP
-        <input class="settings__child__mailContainer__smtpHostLabel__input input" type="text" placeholder="Adresse du serveur SMTP">
+        <%= __('settings.smtp_address') %>
+        <input class="settings__child__mailContainer__smtpHostLabel__input input" type="text" placeholder="<%= __('settings.smtp_address_placeholder') %>">
       </label>
       <label class="settings__child__mailContainer__smtpPasswdLabel flex">
-        Mot de passe du compte email
-        <input class="settings__child__mailContainer__smtpPasswdLabel__input input" type="password" placeholder="Laisser vide pour un mot de passe inchangé">
+        <%= __('settings.mail_address_passwd') %>
+        <input class="settings__child__mailContainer__smtpPasswdLabel__input input" type="password" placeholder="<%= __('form.passwd_empty') %>">
       </label>
     </span>
   </div>

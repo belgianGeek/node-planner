@@ -43,7 +43,9 @@ i18n.configure({
   locales: ['en', 'fr'],
   directory: path.join(__dirname, '/locales'),
   defaultLocale: 'fr',
-  queryParameter: 'lang'
+  objectNotation: true,
+  queryParameter: 'lang',
+  updateFiles: false
 });
 
 const createLocationsTable = require('./modules/createLocationsTable');
@@ -146,6 +148,7 @@ initClient.connect()
   });
 
 app.set('view engine', 'ejs');
+app.use("/locales", express.static(__dirname + "/locales"));
 app.use("/src", express.static(__dirname + "/src"));
 app.use(express.urlencoded({
   extended: false

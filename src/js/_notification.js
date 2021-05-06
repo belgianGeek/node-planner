@@ -3,7 +3,7 @@ const errorNotification = (error, isImport) => {
     $('.import__child__container__notification')
       .addClass('notificationFailure')
       .html(`
-        Une erreur est survenue lors de l\'import :
+        ${locales.import.error} :
         <br>
         ${error}
         `);
@@ -12,7 +12,7 @@ const errorNotification = (error, isImport) => {
     $('.notification')
       .removeClass('notificationInfo notificationMail notificationSuccess')
       .addClass('notificationFailure');
-    $('.notification__msg').text('Une erreur s\'est produite... 😱');
+    $('.notification__msg').text(`${locales.notification.failure}... 😱`);
   }
 }
 
@@ -20,13 +20,13 @@ const successNotification = (isImport, usersNb) => {
   if (isImport) {
     if (usersNb === 0) {
       $('.import__child__container__notification').addClass('notificationFailure');
-      errorNotification(`Aucun utilisateur n'a été importé : le fichier semble vide !`, isImport);
+      errorNotification(`${locales.import.error_notification}`, isImport);
     } else {
       $('.import__child__container__notification').addClass('notificationSuccess');
       if (usersNb === 1) {
-        $('.import__child__container__notification').text(`${usersNb} utilisateur a été importé`);
+        $('.import__child__container__notification').text(`${usersNb} ${locales.import.success_single}`);
       } else {
-        $('.import__child__container__notification').text(`${usersNb} utilisateurs ont été importés`);
+        $('.import__child__container__notification').text(`${usersNb} ${locales.import.success_multiple}`);
       }
     }
   } else {
@@ -34,7 +34,7 @@ const successNotification = (isImport, usersNb) => {
     $('.notification')
       .removeClass('notificationInfo notificationMail notificationFailure')
       .addClass('notificationSuccess');
-    $('.notification__msg').text('Changements enregistrés avec succès ! 😉');
+    $('.notification__msg').text(`${random(locales.notification.success)} ! 😉`);
   }
 }
 
@@ -54,7 +54,7 @@ socket.on('notification', notification => {
     $('.notification')
       .removeClass('notificationSuccess notificationMail notificationFailure')
       .addClass('notificationInfo');
-    $('.notification__msg').text('Aucune donnée correspondante n\'a été trouvée... 😶');
+    $('.notification__msg').text(locales.notification.notFound);
   } else if (notification.type === 'mail') {
     $('.notification__icon').attr('src', './src/scss/icons/mail.svg');
     $('.notification')

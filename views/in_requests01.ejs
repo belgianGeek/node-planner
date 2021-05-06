@@ -1,41 +1,41 @@
 <section class="inRequests inRequests__step1 hidden">
   <span class="inRequests__id hidden"></span>
-  <form class="inRequests__form flex" action="/" method="post" enctype="multipart/form-data">
-    <h2 class="title"><%= __('request-applicant-title') %></h2>
+  <form class="inRequests__form flex" action="/" method="post" enctype="multipart/form.data">
+    <h2 class="title"><%= __('request.applicant_title') %></h2>
     <span class="inRequests__form__applicantInfo flex">
       <label class="<% if (!isSearchPage) { %> flex <% } else { %> hidden <% } %>">
-        <%= __('request-location-title') %>
+        <%= __('request.location_title') %>
         <select class="inRequests__form__applicantInfo__location input" required="true">
-          <option value="default"><%= __('request-location-default') %></option>
+          <option value="default"><%= __('request.location_default') %></option>
           <% for(const [i, location] of locations.entries()) { %>
           <option value="<%= location.location_id %>"><%= location.location_name %></option>
           <% } %>
         </select>
       </label>
       <label class="flex">
-        <%= __('request-applicant-name') %>
-        <input class="inRequests__form__applicantInfo__name input" type="text" placeholder="<%= __('request-applicant-name') %>..." required="true">
+        <%= __('request.applicant_name') %>
+        <input class="inRequests__form__applicantInfo__name input" type="text" placeholder="<%= __('request.applicant_name') %>..." required="true">
       </label>
       <label class="flex">
-        <%= __('request-applicant-firstname') %>
-        <input class="inRequests__form__applicantInfo__firstname input" type="text" placeholder="<%= __('request-applicant-firstname') %>..." required="true">
+        <%= __('request.applicant_firstname') %>
+        <input class="inRequests__form__applicantInfo__firstname input" type="text" placeholder="<%= __('request.applicant_firstname') %>..." required="true">
       </label>
     </span>
     <span class="inRequests__form__requestInfo flex">
       <span class="inRequests__form__requestInfo__row1 flex">
         <% if (isSearchPage) { %>
           <label class="flex">
-            <%= __('request-status') %>
-            <select class="inRequests__form__requestInfo__row1__status input" type="text" placeholder="<%= __('request-status-placeholder') %>..." required="true">
-              <option value="waiting"><%= __('request-status-waiting') %></option>
-              <option value="wip"><%= __('request-status-inProgress') %></option>
-              <option value="done"><%= __('request-status-done') %></option>
+            <%= __('request.status') %>
+            <select class="inRequests__form__requestInfo__row1__status input" type="text" placeholder="<%= __('request.status_placeholder') %>..." required="true">
+              <option value="waiting"><%= __('request.status_waiting') %></option>
+              <option value="wip"><%= __('request.status_inProgress') %></option>
+              <option value="done"><%= __('request.status_done') %></option>
             </select>
           </label>
           <label class="flex">
-            <%= __('request-assignedWorker') %>
+            <%= __('request.assignedWorker') %>
             <select class="inRequests__form__requestInfo__row1__assignedWorker input" required="true">
-              <option value="default"><%= __('request-assignedWorker-default') %></option>
+              <option value="default"><%= __('request.assignedWorker_default') %></option>
               <% for(const user of users) { %>
                 <option value="<%= user.user_id %>"><%= user.name.toUpperCase() %>, <%= user.firstname %></option>
                 <% } %>
@@ -43,27 +43,27 @@
             </label>
         <% } %>
         <label class="flex">
-          <%= __('request-date') %>
+          <%= __('request.date') %>
           <input class="inRequests__form__requestInfo__row1__requestDate input" type="date" required="true">
         </label>
         <% if (!isSearchPage && sendAttachments) { %>
           <label class="flex">
-            <%= __('request-attachment') %>
+            <%= __('request.attachment') %>
             <input class="inRequests__form__requestInfo__row1__file input" type="file" accept="image/*">
           </label>
         <% } %>
       </span>
-      <h2 class="title"><%= __('request-subject') %></h2>
-      <textarea class="inRequests__form__requestInfo__comment flex" rows="8" cols="80" placeholder="<%= __('request-subject-placeholder') %>"></textarea>
+      <h2 class="title"><%= __('request.subject') %></h2>
+      <textarea class="inRequests__form__requestInfo__comment flex" rows="8" cols="80" placeholder="<%= __('request.subject_placeholder') %>"></textarea>
     </span>
     <span class="inRequests__form__btnContainer flex">
-      <button class="inRequests__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
-      <button class="inRequests__form__btnContainer__submit inRequests__step1__btn btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
+      <button class="inRequests__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form.reset_generic') %></button>
+      <button class="inRequests__form__btnContainer__submit inRequests__step1__btn btn btn--submit" type="submit"><%= __('form.submit_generic') %></button>
       <% if (isSearchPage) { %>
-        <button class="inRequests__form__btnContainer__hide inRequests__step1__btn btn home-btn flex" type="button"><%= __('form-back-results') %></button>
+        <button class="inRequests__form__btnContainer__hide inRequests__step1__btn btn home-btn flex" type="button"><%= __('form.back_results') %></button>
       <% } %>
     </span>
   </form>
   <!-- Only hide the image tag to avoid errors when loading tasks containing attachments -->
-  <img <% if (!sendAttachments) { %> class="hidden" <% } %>src="/src/scss/icons/empty.svg" alt="<%= __('request-attachment-alt') %>" width="100%" height="70%">
+  <img <% if (!sendAttachments) { %> class="hidden" <% } %>src="/src/scss/icons/empty.svg" alt="<%= __('request.attachment_alt') %>" width="100%" height="70%">
 </section>

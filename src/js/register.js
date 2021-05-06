@@ -94,7 +94,7 @@ const register = () => {
           socket.emit('update', data2send);
 
           // Reset the password field placeholder
-          password.attr('placeholder', 'Insérez le mot magique');
+          password.attr('placeholder', locales.form.passwd_generic);
         }
 
         // Remove the 'blur' class if the user submit the form
@@ -112,7 +112,7 @@ const register = () => {
 
           // Update the user greeting on the homepage only after a non-admin user has updated its profile and if it is allowed
           if ($('.register').length && $('.register__title').hasClass('myAccountTitle')) {
-            $('.greetings').text(`Bonjour ${$('.register__form__userFirstName input').val()} ${$('.register__form__name input').val()} !`);
+            $('.greetings').text(`${locales.greetings} ${$('.register__form__userFirstName input').val()} ${$('.register__form__name input').val()} !`);
           }
 
           data2send.values = [];
@@ -144,7 +144,7 @@ const register = () => {
       if (!$('form .warning').length) {
         let warning = $('<span></span>')
           .addClass('warning')
-          .text('Certains champs sont incorrects...')
+          .text(locales.form.invalid)
           .appendTo('.register__form');
       };
 

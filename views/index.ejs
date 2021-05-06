@@ -7,7 +7,7 @@
   <div class="backgroundColor"></div>
   <header class="header">
     <span class="header__container flex">
-      <img class="header__container__icon returnIcon hidden" alt="<%= __('header-icon-alt') %>" title="<%= __('header-icon-alt') %>" src="src/scss/icons/return.svg">
+      <img class="header__container__icon returnIcon hidden" alt="<%= __('header_icon_alt') %>" title="<%= __('header_icon_alt') %>" src="src/scss/icons/return.svg">
       <span class="header__container__msg hidden">Étape précédente</span>
     </span>
     <%- include('sidebar'); %>
@@ -17,11 +17,11 @@
     <section class="home flex">
       <h1 class="home__mainTitle"><%= instanceName %></h1>
       <p class="greetings"><%= __('greetings') %> <%= user.firstname %> <%= user.name %> !</p>
-      <h2 class="home__title title"><%= __('home-call-to-action') %></h2>
+      <h2 class="home__title title"><%= __('home.call_to_action') %></h2>
       <span class="home__btnContainer flex">
-        <button class="home__btnContainer__newRequest btn home-btn" type="button"><%= __('home-new-request') %></button>
+        <button class="home__btnContainer__newRequest btn home-btn" type="button"><%= __('home.new_request') %></button>
         <button class="home__btnContainer__search btn home-btn" type="button" name="button">
-          <a href="/search?lang=<%= __('lang') %>"><%= __('home-show-requests') %></a>
+          <a href="/search?lang=<%= __('lang') %>"><%= __('home.show_requests') %></a>
         </button>
       </span>
     </section>
@@ -29,13 +29,13 @@
     <% if (user.type === 'admin') { %>
       <%- include('users', {
         classname: 'users',
-        subject: __('users-subject'),
-        title: __('users-add-title')
+        subject: __('users.subject'),
+        title: __('users.add_title')
       }); %>
       <%- include('users', {
         classname: 'locations',
-        subject: __('locations-subject'),
-        title: __('locations-add-title')
+        subject: __('locations.subject'),
+        title: __('locations.add_title')
       }); %>
       <%- include('register', {
         registerClass: 'hidden',
@@ -48,22 +48,22 @@
   <% if (user.type !== 'guest') { %>
   <span class="export hidden">
     <span class="export__child flex">
-      <h2 class="export__child__title title"><%= __('export-title') %></h2>
+      <h2 class="export__child__title title"><%= __('export.title') %></h2>
       <section class="export__child__container flex">
         <form class="export__child__container__format flex">
           <h3 class="title">Format</h3>
           <label class="export__child__container__format__csv">
             <input class="export__child__container__format__csv__input input radio" name="DBformat" type="radio" value="csv">
-            <%= __('export-csv') %>
+            <%= __('export.csv') %>
           </label>
           <label class="export__child__container__format__pgsql">
             <input class="export__child__container__format__pgsql__input input radio" name="DBformat" type="radio" value="pgsql">
-            <%= __('export-postgres') %>
+            <%= __('export.postgres') %>
           </label>
         </form>
         <span class="export__child__container__btnContainer flex">
-          <button class="export__child__container__btnContainer__btn btn btn--submit" type="button"><%= __('export-btn') %></button>
-          <button class="export__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form-cancel-generic') %></button>
+          <button class="export__child__container__btnContainer__btn btn btn--submit" type="button"><%= __('export.btn') %></button>
+          <button class="export__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form.cancel_generic') %></button>
         </span>
       </section>
     </span>
@@ -71,18 +71,18 @@
   <% if (user.type === 'admin') { %>
     <span class="import hidden">
       <span class="import__child flex">
-        <h2 class="import__child__title title"><%= __('import-title') %></h2>
+        <h2 class="import__child__title title"><%= __('import.title') %></h2>
         <section class="import__child__container flex">
-          <form action="/upload" method="post" class="import__child__container__file flex" enctype="multipart/form-data">
+          <form action="/upload" method="post" class="import__child__container__file flex" enctype="multipart/form.data">
             <label class="import__child__container__file__upload">
-              <%= __('import-select-file') %> :
+              <%= __('import.select_file') %> :
               <input class="import__child__container__file__upload__input input" name="dataUpload" type="file">
-              <%= __('import-template-01') %> <a href="/template"><%= __('import-template-02') %></a>
+              <%= __('import.template_01') %> <a href="/template"><%= __('import.template_02') %></a>
             </label>
             <span class="import__child__container__notification flex"></span>
             <span class="import__child__container__btnContainer flex">
-              <button class="import__child__container__btnContainer__btn btn btn--submit" type="submit"><%= __('import-btn') %></button>
-              <button class="import__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form-cancel-generic') %></button>
+              <button class="import__child__container__btnContainer__btn btn btn--submit" type="submit"><%= __('import.btn') %></button>
+              <button class="import__child__container__btnContainer__btn btn btn--reset" type="button"><%= __('form.cancel_generic') %></button>
             </span>
           </form>
         </section>

@@ -1,19 +1,19 @@
 <section class="addLocation hidden">
-  <h2 class="addLocation__title title"><%= __('add-location-title') %></h2>
+  <h2 class="addLocation__title title"><%= __('add_location_title') %></h2>
   <form class="addLocation__form flex" action="/" method="post">
     <input class="addLocation__form__userID" type="hidden">
     <label class="addLocation__form__name flex">
-      <%= __('form-name-generic') %>
-      <input class="input" type="text" placeholder="<%= __('form-name-generic') %>" required>
+      <%= __('form.name_generic') %>
+      <input class="input" type="text" placeholder="<%= __('form.name_generic') %>" required>
     </label>
     <label class="addLocation__form__email flex">
-      <%= __('form-mail-generic') %>
-      <input class="input" type="email" placeholder="<%= __('form-mail-generic') %>" required>
+      <%= __('form.mail_generic') %>
+      <input class="input" type="email" placeholder="<%= __('form.mail_generic') %>" required>
     </label>
     <span class="addLocation__form__btnContainer flex">
-      <button class="addLocation__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
-      <button class="addLocation__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
-      <button class="addLocation__form__btnContainer__hide btn home-btn" type="button"><%= ('form-cancel-generic') %></button>
+      <button class="addLocation__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form.reset_generic') %></button>
+      <button class="addLocation__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form.submit_generic') %></button>
+      <button class="addLocation__form__btnContainer__hide btn home-btn" type="button"><%= __('form.cancel_generic') %></button>
     </span>
   </form>
 </section>

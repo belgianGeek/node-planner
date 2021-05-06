@@ -198,7 +198,7 @@ const inRequests = () => {
       if (!$('form .warning').length) {
         let warning = $('<span></span>')
           .addClass('warning')
-          .text('Certains champs sont incorrects...')
+          .text(locales.form.invalid)
           .appendTo('.inRequests__form');
       };
 

@@ -6,23 +6,23 @@
     <% postURL = '/login?lang=' + __('lang'); %>
   <% } else { %>
     <% postURL = '/?lang=' + __('lang'); %>
-    <% title = __('users-add-title'); %>
+    <% title = __('users.add_title'); %>
   <% } %>
   <% if (title !== '') { %><h2 class="register__title title"><%= title %></h2> <% } %>
   <form class="register__form flex" action="<%= postURL %>" method="post">
     <input class="hidden register__form__userID" type="text" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.user_id %>" <% } %>>
     <label class="register__form__name flex">
-      <%= __('form-name-generic') %>
-      <input class="input" type="text" placeholder="<%= __('form-name-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.name %>"<% } %> required>
+      <%= __('form.name_generic') %>
+      <input class="input" type="text" placeholder="<%= __('form.name_generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.name %>"<% } %> required>
     </label>
     <label class="register__form__userFirstName flex">
-      <%= __('form-firstname-generic') %>
-      <input class="input" type="text" placeholder="<%= __('form-firstname-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.firstname %>"<% } %> required>
+      <%= __('form.firstname_generic') %>
+      <input class="input" type="text" placeholder="<%= __('form.firstname_generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.firstname %>"<% } %> required>
     </label>
     <label class="register__form__location flex">
-      <%= __('form-location-generic') %>
+      <%= __('form.location_generic') %>
       <select class="input">
-        <option value="default"><%= __('register-location-default') %>...</option>
+        <option value="default"><%= __('register.location_default') %>...</option>
         <% for(const [i, location] of locations.entries()) { %>
           <option
             value="<%= location.location_id %>"
@@ -32,42 +32,42 @@
       </select>
     </label>
     <label class="register__form__password flex">
-      <%= __('login-passwd') %>
-      <input class="input" type="password" placeholder="<%= __('form-passwd-generic') %>" required>
+      <%= __('login.passwd') %>
+      <input class="input" type="password" placeholder="<%= __('form.passwd_generic') %>" required>
     </label>
     <label class="register__form__email flex">
-      <%= __('form-mail-generic') %>
-      <input class="input" type="email" placeholder="<%= __('form-mail-generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.email %>"<% } %> required>
+      <%= __('form.mail_generic') %>
+      <input class="input" type="email" placeholder="<%= __('form.mail_generic') %>" <% if (allowPasswordUpdate && typeof user !== 'undefined') { %> value="<%= user.email %>"<% } %> required>
     </label>
     <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === 'admin')) { %>
       <label class="register__form__type flex">
-        <%= __('register-account-type') %>
+        <%= __('register.account_type') %>
         <select class="input">
-          <option value="default"><%= __('register-account-type-default') %>...</option>
-          <option value="admin" <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === "admin")) { %> selected <% } %>><%= __('account-type-admin') %></option>
+          <option value="default"><%= __('register.account_type_default') %>...</option>
+          <option value="admin" <% if (allowPasswordUpdate && (typeof user === 'undefined' || user.type === "admin")) { %> selected <% } %>><%= __('account_type.admin') %></option>
           <% if (isFirstUserConfigured) { %>
-            <option value="user" <% if (allowPasswordUpdate && user.type === "user") { %> selected <% } %>><%= __('account-type-user') %></option>
-            <option value="guest" <% if (allowPasswordUpdate && user.type === "guest") { %> selected <% } %>><%= __('account-type-guest') %></option>
+            <option value="user" <% if (allowPasswordUpdate && user.type === "user") { %> selected <% } %>><%= __('account_type.user') %></option>
+            <option value="guest" <% if (allowPasswordUpdate && user.type === "guest") { %> selected <% } %>><%= __('account_type.guest') %></option>
           <% } %>
         </select>
       </label>
     <% } %>
-    <h3 class="register__form__title title"><%= __('gender-title') %></h3>
+    <h3 class="register__form__title title"><%= __('gender.title') %></h3>
     <span class="register__form__gender flex">
       <label class="register__form__male">
         <input class="input radio" name="gender" type="radio" value="m" <% if (allowPasswordUpdate && typeof user !== 'undefined' && user.gender === "m") { %> checked <% } %>>
-        <%= __('gender-male') %>
+        <%= __('gender.male') %>
       </label>
       <label class="register__form__female">
         <input class="input radio" name="gender" type="radio" value="f" <% if (allowPasswordUpdate && typeof user !== 'undefined' && user.gender === "f") { %> checked <% } %>>
-        <%= __('gender-female') %>
+        <%= __('gender.female') %>
       </label>
     </span>
     <span class="register__form__btnContainer flex">
-      <button class="register__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
-      <button class="register__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
+      <button class="register__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form.reset_generic') %></button>
+      <button class="register__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form.submit_generic') %></button>
       <% if (isFirstUserConfigured) { %>
-        <button class="register__form__btnContainer__hide btn home-btn" type="button"><%= __('form-cancel-generic') %></button>
+        <button class="register__form__btnContainer__hide btn home-btn" type="button"><%= __('form.cancel_generic') %></button>
       <% } %>
     </span>
   </form>

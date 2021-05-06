@@ -25,7 +25,7 @@ const dbConfig = () => {
 
   socket.on('settings import', success => {
     if (success) {
-      $('.home__mainTitle').text(`${instance.val()} - Création du premier compte administrateur`);
+      $('.home__mainTitle').text(`${instance.val()} - ${locales.config.first_admin}`);
       hideMenu('dbConfig');
       showMenu('register');
     }

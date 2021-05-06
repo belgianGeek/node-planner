@@ -56,7 +56,7 @@ const manageLocations = () => {
       if (!$('form .warning').length) {
         let warning = $('<span></span>')
           .addClass('warning')
-          .text('Certains champs sont incorrects...')
+          .text(locales.form.invalid)
           .appendTo('.addLocation__form');
       };
 

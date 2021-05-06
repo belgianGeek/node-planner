@@ -6,6 +6,18 @@ let data2send = {
   values: []
 };
 
+// Get locales
+let locales;
+$.ajax({
+  url: `/locales/${window.navigator.language.split('-')[0]}.json`,
+  method: 'GET',
+  dataType: 'json'
+}).done(res => {
+  locales = res;
+});
+
+const random = array => array[Math.floor(Math.random() * array.length)];
+
 let inRequestsReaderGender, recordDelTimeOut, recordUpdateTimeOut, inRequestsTimeOut;
 
 const toggleSwitch = (input, slider, check) => {

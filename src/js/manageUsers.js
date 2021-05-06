@@ -5,13 +5,13 @@ function userTypeSwitch(inputValue) {
 
   switch (inputValue) {
     case 'guest':
-      returnValue = 'Visiteur';
+      returnValue = locales.account_type.guest;
       break;
     case 'user':
-      returnValue = 'Utilisateur';
+      returnValue = locales.account_type.user;
       break;
     case 'admin':
-      returnValue = 'Administrateur';
+      returnValue = locales.account_type.admin;
       break;
     default:
       inputValue;
@@ -132,10 +132,10 @@ const manageUsers = () => {
 
       // Make sure the title is correct
       if (childMenuClassname === 'users') {
-        $('.register__title').text('Ajouter un utilisateur');
+        $('.register__title').text(locales.users.add_title);
         $('.register__title').addClass('addUserTitle');
       } else {
-        $('.addLocation__title').text('Ajouter une implantation');
+        $('.addLocation__title').text(locales.locations.add_title);
         $('.addLocation__title').addClass('newLocationTitle');
       }
 
@@ -169,22 +169,22 @@ const manageUsers = () => {
           switch (column) {
             // Users rows
             case 'name':
-              columnTitle = 'Nom';
+              columnTitle = locales.form.name_generic;
               break;
             case 'firstname':
-              columnTitle = 'Prénom';
+              columnTitle = locales.form.firstname_generic;
               break;
             case 'email':
-              columnTitle = 'Adresse email';
+              columnTitle = locales.form.mail_generic;
               break;
             case 'location':
-              columnTitle = 'Implantation';
+              columnTitle = locales.form.location_generic;
               break;
             case 'password':
-              columnTitle = 'Mot de passe';
+              columnTitle = locales.login.passwd;
               break;
             case 'type':
-              columnTitle = 'Type de compte';
+              columnTitle = locales.register.account_type;
               break;
             default:
               columnTitle = '';
@@ -193,10 +193,10 @@ const manageUsers = () => {
           switch (column) {
             // Locations rows
             case 'location_name':
-              columnTitle = 'Nom';
+              columnTitle = locales.form.name_generic;
               break;
             case 'location_mail':
-              columnTitle = 'Adresse email';
+              columnTitle = locales.form.mail_generic;
               break;
             default:
               columnTitle = '';
@@ -258,7 +258,7 @@ const manageUsers = () => {
               .removeClass('hidden');
 
             // Update the password field placeholder
-            $('.register.absolute .register__form__password input').attr('placeholder', 'Laisser vide pour un mot de passe inchangé');
+            $('.register.absolute .register__form__password input').attr('placeholder', locales.form.passwd_empty);
 
             $('.users, .header').addClass('blur backgroundColor');
           } else if ($('.locations').hasClass('flex')) {
@@ -272,10 +272,10 @@ const manageUsers = () => {
           // Modify the title
           let sectionTitle, sectionClass;
           if (childMenuClassname === 'users') {
-            sectionTitle = `Modification de l'utilisateur`;
+            sectionTitle = locales.users.modify_title;
             sectionClass = 'updateUserTitle';
           } else {
-            sectionTitle = `Modification de l'implantation`;
+            sectionTitle = locales.locations.modify_title;
             sectionClass = 'updateLocationTitle';
           }
 
@@ -310,7 +310,7 @@ const manageUsers = () => {
 
             if (childMenuClassname === 'users') {
               // Update the password field placeholder
-              $('.register.absolute .register__form__password input').attr('placeholder', 'Insérez le mot magique');
+              $('.register.absolute .register__form__password input').attr('placeholder', locales.form.passwd_generic);
 
               $(`.${parent} .${childMenuClassname}__container__row__item--firstname`).text($(`.${parentMenuClassname}__form__userFirstName input`).val().replace(/\'\'/g, "'"));
               $(`.${parent} .${childMenuClassname}__container__row__item--location`).text($(`.${parentMenuClassname}__form__location option:selected`).text().replace(/\'\'/g, "'"));

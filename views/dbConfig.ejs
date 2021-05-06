@@ -1,42 +1,42 @@
 <section class="dbConfig flex">
   <form class="dbConfig__form flex" action="/createdb" method="post">
-    <h2 class="dbConfig__title title"><%= __('config-title')%></h2>
+    <h2 class="dbConfig__title title"><%= __('config.title')%></h2>
     <label class="dbConfig__form__name flex">
-      <%= __('config-instance-name') %>
-      <input class="input" type="text" name="instance" placeholder="<%= __('config-instance-name-placeholder') %>" required>
+      <%= __('config.instance_name') %>
+      <input class="input" type="text" name="instance" placeholder="<%= __('config.instance_name_placeholder') %>" required>
     </label>
     <label class="dbConfig__form__description flex">
-      <%= __('config-instance-purpose') %>
-      <textarea class="dbConfig__form__description__textarea" rows="8" cols="80" placeholder="<%= __('config-instance-purpose-placeholder') %>"></textarea>
+      <%= __('config.instance_purpose') %>
+      <textarea class="dbConfig__form__description__textarea" rows="8" cols="80" placeholder="<%= __('config.instance_purpose_placeholder') %>"></textarea>
     </label>
     <label class="dbConfig__form__locationName flex">
-      <%= __('config-first-location-name') %>
-      <input class="input" type="text" name="location_name" placeholder="<%= __('config-first-location-name-placeholder') %>" required>
+      <%= __('config.first_location_name') %>
+      <input class="input" type="text" name="location_name" placeholder="<%= __('config.first_location_name_placeholder') %>" required>
     </label>
     <label class="dbConfig__form__locationMail flex">
-      <%= __('config-first-location-mail') %>
-      <input class="input" type="email" name="location_mail" placeholder="<%= __('config-first-location-mail-placeholder') %>" required>
+      <%= __('config.first_location_mail') %>
+      <input class="input" type="email" name="location_mail" placeholder="<%= __('config.first_location_mail_placeholder') %>" required>
     </label>
-    <h2 class="dbConfig__title title"><%= __('settings-emailing-title') %></h2>
+    <h2 class="dbConfig__title title"><%= __('settings.emailing_title') %></h2>
     <label class="dbConfig__form__senderLabel flex">
-      <%= __('settings-sender-name') %>
-      <input class="input" type="text" name="sender_name" placeholder="<%= __('settings-sender-name') %>" required>
+      <%= __('settings.sender_name') %>
+      <input class="input" type="text" name="sender_name" placeholder="<%= __('settings.sender_name') %>" required>
     </label>
     <label class="dbConfig__form__smtpUserLabel flex">
-      <%= __('settings-sender-mail-address') %>
-      <input class="input" type="email" name="smtp_user" placeholder="<%= __('settings-sender-mail-address') %>" required>
+      <%= __('settings.sender_mail_address') %>
+      <input class="input" type="email" name="smtp_user" placeholder="<%= __('settings.sender_mail_address') %>" required>
     </label>
     <label class="dbConfig__form__smtpHostLabel flex">
-      <%= __('settings-smtp-address') %>
-      <input class="input" type="text" name="smtp_host" placeholder="<%= __('settings-smtp-address-placeholder') %>" required>
+      <%= __('settings.smtp_address') %>
+      <input class="input" type="text" name="smtp_host" placeholder="<%= __('settings.smtp_address_placeholder') %>" required>
     </label>
     <label class="dbConfig__form__smtpPasswdLabel flex">
-      <%= __('settings-mail-address-passwd') %>
-      <input class="input" type="password" name="smtp_passwd" placeholder="<%= __('form-passwd-generic') %>" required>
+      <%= __('settings.mail_address_passwd') %>
+      <input class="input" type="password" name="smtp_passwd" placeholder="<%= __('form.passwd_generic') %>" required>
     </label>
     <span class="dbConfig__form__btnContainer flex">
-      <button class="dbConfig__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form-reset-generic') %></button>
-      <button class="dbConfig__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form-submit-generic') %></button>
+      <button class="dbConfig__form__btnContainer__reset btn btn--reset" type="reset"><%= __('form.reset_generic') %></button>
+      <button class="dbConfig__form__btnContainer__submit btn btn--submit" type="submit"><%= __('form.submit_generic') %></button>
     </span>
   </form>
 </section>
