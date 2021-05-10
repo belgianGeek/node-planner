@@ -38,6 +38,22 @@
       width: 0;
     }
 
+    .lang {
+      flex-direction: column;
+      position: relative;
+      top: 2em;
+
+      &__container {
+        justify-content: space-between;
+        font-size: 3.5em;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
     &:hover {
       width: 22em;
       transition: width 250ms ease-in-out;
@@ -64,6 +80,11 @@
       svg.hide {
         width: 30%;
       }
+
+      .lang__container {
+        flex-direction: row;
+        width: 50%;
+      }
     }
 
     form {
@@ -89,21 +110,23 @@
     }
 
     &__item,
-    &__item a {
+    &__item a,
+    .lang {
       text-decoration: none;
       font-size: 1em;
       width: 100%;
       @include align(flex-start, center);
       box-sizing: border-box;
       cursor: pointer;
+    }
 
+    &__item,
+    &__item a {
       &__icon {
-        // width: 30%;
         width: 100%;
       }
 
       &__legend {
-        // width: 70%;
         &.btn {
           padding: 0;
           background: none;
