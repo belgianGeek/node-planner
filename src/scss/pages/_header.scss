@@ -117,11 +117,12 @@
       width: 100%;
       @include align(flex-start, center);
       box-sizing: border-box;
-      cursor: pointer;
     }
 
     &__item,
     &__item a {
+      cursor: pointer;
+
       &__icon {
         width: 100%;
       }
